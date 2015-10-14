@@ -1,0 +1,103 @@
+<config>
+    <tabs>
+        <creatuity translate="label" module="creatuity_megamenu">
+            <label>Creatuity</label>
+            <sort_order>510</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+        </creatuity>
+    </tabs>
+    <sections>
+        <creatuity_megamenu translate="label" module="creatuity_megamenu">
+            <class>separator-top</class>
+            <label>Mega Menu</label>
+            <tab>creatuity</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>50</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label" module="creatuity_megamenu">
+                    <label>General</label>
+                    <sort_order>100</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <module_enabled translate="label tooltip" module="creatuity_megamenu">
+                            <label>Enable extension</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <tooltip>Determines whether module is enabled or disabled in frontend</tooltip>
+                        </module_enabled>
+                        <mobile_size translate="label tooltip" module="creatuity_megamenu">
+                            <label>Mobile Mode Size</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>200</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <tooltip>Determines the maximum window width for mobile mode</tooltip>
+                        </mobile_size>
+                        <force_click translate="label tooltip" module="creatuity_megamenu">
+                            <label>Force work on click</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>300</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <tooltip>Determines action event (hover/click)</tooltip>
+                        </force_click>
+                        <breadcrumb_link translate="label tooltip" module="creatuity_megamenu">
+                            <label>Breadcrumbs Links to Category</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>400</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <tooltip>If set to "No", clicking on a breadcrumbs will navigate through the Megamenu</tooltip>
+                        </breadcrumb_link>
+                    </fields>
+                </general>
+                
+                <thumbnail translate="label" module="creatuity_megamenu">
+                    <label>Thumbnail</label>
+                    <sort_order>200</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <width translate="label tooltip" module="creatuity_megamenu">
+                            <label>Width</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>100</sort_order>
+                            <frontend_class>required-entry validate-digits</frontend_class>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <tooltip>Determines the real width of the thumbnail in pixels</tooltip>
+                        </width>
+                        <height translate="label tooltip" module="creatuity_megamenu">
+                            <label>Height</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>200</sort_order>
+                            <frontend_class>required-entry validate-digits</frontend_class>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <tooltip>Determines the real height of the thumbnail in pixels</tooltip>
+                        </height>
+                    </fields>
+                </thumbnail>                
+            </groups>
+        </creatuity_megamenu>
+    </sections>
+</config>

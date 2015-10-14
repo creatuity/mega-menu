@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <action method="addItem" ifconfig="creatuity_megamenu/general/module_enabled"><type>skin_js</type><name>js/creatuity/megamenu.js</name></action>
+            <action method="addItem" ifconfig="creatuity_megamenu/general/module_enabled"><type>skin_css</type><name>css/creatuity/megamenu.css</name></action>
+            <action method="addItem" ifconfig="creatuity_megamenu/general/module_enabled"><type>skin_css</type><name>css/creatuity/baseFixes.css</name></action>
+            <action method="addJs" ifconfig="creatuity_megamenu/general/module_enabled"><script>creatuity/lib/jquery-1.10.2.min.js</script></action>
+            <action method="addJs" ifconfig="creatuity_megamenu/general/module_enabled"><script>creatuity/lib/noconflict.js</script></action>
+            <action method="addJs" ifconfig="creatuity_megamenu/general/module_enabled"><script>creatuity/lib/modernizr.custom.min.js</script></action>
+            <action method="addJs" ifconfig="creatuity_megamenu/general/module_enabled"><script>creatuity/lib/jquery.cycle2.min.js</script></action>
+        </reference>
+        
+        <block type="creatuity_megamenu/topmenu" name="mmcatalog.topnav" template="page/html/topmenu.phtml">
+            <block type="creatuity_megamenu/category_renderer_root" name="mmcatalog.topnav.renderer" as="catalog.topnav.renderer" >
+                <block type="creatuity_megamenu/initializer" name="megamenu.initializer" template="creatuity/megamenu/initializer.phtml"/>
+            </block>
+        </block>
+        
+        <reference name="top.menu">
+            <action method="unsetChild" ifconfig="creatuity_megamenu/general/module_enabled"><name>catalog.topnav</name></action>
+            <action method="append" ifconfig="creatuity_megamenu/general/module_enabled"><block>mmcatalog.topnav</block><alias>catalog.topnav</alias></action>
+        </reference>
+    </default>
+</layout>
+

@@ -1,0 +1,589 @@
+/**********************************************************************************
+    Project Name: MegaMenu 
+    Author: Creatuity Corp.
+    Version: 1.0
+    Notes: Some of the styles are applied in megamenu.js
+**********************************************************************************/
+
+
+/**********************************************************************************
+    COMMON STYLES
+**********************************************************************************/
+/*
+    Reset Browser Styles 
+*/
+#megamenu-navigation #nav-container {
+    background: rgba(0,0,0,0.10);
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    height: 50px;
+}
+
+#megamenu-navigation.mobile-mode #nav-container {
+    height: auto;
+}
+
+#megamenu-navigation.wait * {
+    cursor: wait !important;
+}
+
+#megamenu-navigation.wait a .category-name{
+    color: rgba(0,0,0,0.3) !important;
+}
+
+#megamenu-navigation a:hover, 
+#megamenu-navigation a:active, 
+#megamenu-navigation a:focus {
+    outline: 0;
+}
+
+#megamenu-navigation {
+    position: relative;
+}
+
+.megamenu-container, .menu-container, .ajax-loader {
+    display: none;
+}
+
+#nav #megamenu-navigation .megamenu-panels .megamenu-container .content {
+    position: static;
+    box-sizing: border-box;
+}
+
+#nav #megamenu-navigation .megamenu-panels .megamenu-container .back-button {
+    box-sizing: border-box;
+}
+
+#nav #megamenu-navigation .breadcrumbs {
+    text-align: left;
+}
+
+#nav #megamenu-navigation .breadcrumbs ul li {
+    display: inline-block;
+    height: auto;
+    background: none;
+}
+
+#nav #megamenu-navigation .breadcrumbs ul li a {
+    background: none;
+}
+
+.menu-container {
+    display: block;
+    visibility: hidden;position: absolute;
+}
+
+.ajax-loader {
+    position: absolute;
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    min-height: 100%;
+    background: rgba(255,255,255,0.6);
+    top: 0;
+    z-index: 999999999;
+}
+
+#megamenu-navigation:not(.mobile-mode) #nav-container ul li li.parent > a:after,
+#megamenu-navigation:not(.mobile-mode) .megamenu-panels ul li.parent > a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    display: block;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #666;
+    border-right: none;
+    top: 50%;
+    right: 5px;
+    margin-top: -5px;
+}
+
+#megamenu-navigation:not(.mobile-mode) .breadcrumbs {width: 100%;padding-left: 14px; position: absolute;} 
+#megamenu-navigation:not(.mobile-mode) .breadcrumbs ul {width: 100%;} 
+#megamenu-navigation:not(.mobile-mode) .breadcrumbs li {border: none} 
+#megamenu-navigation:not(.mobile-mode) .breadcrumbs li a {border: none; padding: 0 5px 0 5px;} 
+#megamenu-navigation:not(.mobile-mode) .breadcrumbs .breadcrumb-separator, #megamenu-navigation:not(.mobile-mode) .breadcrumbs li a {line-height: 1em; font-size: 12px;} 
+
+/*#megamenu-navigation ul li.parent > a:after */
+/* 
+    MageMenu Global Styles 
+*/
+.megamenu-container.active {
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+    display: block;
+/*    display: inline-flex;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;*/
+}
+
+#megamenu-navigation:not(.mobile-mode) .megamenu-container.active .content {
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+}
+
+#megamenu-navigation:not(.mobile-mode) .megamenu-container .links-container {
+    -webkit-box-flex: 1;
+    -moz-box-flex:  1;
+    -webkit-flex:  1;
+    -ms-flex:  1;
+    flex:  1;
+    flex-grow: 1;
+    max-width: 255px;
+}
+
+.megamenu-container > .links-container {
+    -webkit-box-flex: 1;
+    -moz-box-flex:  1;
+    -webkit-flex:  1;
+    -ms-flex:  1;
+    flex:  1;
+/*    -webkit-box-flex: 6;
+    -moz-box-flex:  6;
+    -webkit-flex:  6;
+    -ms-flex:  6;
+    flex:  6;*/
+    max-width: 24.5%;
+}
+
+.menu-container ul > li {
+/*    max-width: 250px;*/
+}
+
+.megamenu-slideshow-wrapper {
+    position: relative;
+    -webkit-box-flex: 1;
+    -moz-box-flex:  1;
+    -webkit-flex:  1;
+    -ms-flex:  1;
+    flex:  1;
+    max-width: 100%;
+    align-self: center;
+}
+
+.megamenu-text-widget {
+    box-sizing: border-box;
+    max-width: 23%;
+    padding-left: 1%;
+    padding-right: 1%;
+    -webkit-box-flex: 1;
+    -moz-box-flex:  1;
+    -webkit-flex:  1;
+    -ms-flex:  1;
+    flex:  1;
+}
+
+.megamenu-text-widget.medium {
+    max-width: 48%;
+    -webkit-box-flex: 1;
+    -moz-box-flex:  1;
+    -webkit-flex:  1;
+    -ms-flex:  1;
+    flex:  1;
+}
+
+.megamenu-text-widget h2 {
+    margin-top: 0;
+}
+
+.megamenu-slideshow-container .slideshow-prev, 
+.megamenu-slideshow-container .slideshow-next {
+    display: none;
+}
+
+.megamenu-slideshow-container:hover .slideshow-prev, 
+.megamenu-slideshow-container:hover .slideshow-next {
+    display: block; 
+}
+
+.megamenu-slideshow-container .slideshow-prev:before,
+.megamenu-slideshow-container .slideshow-next:before {
+    top: 50%;
+}
+
+.megamenu-slideshow-container .slideshow li a {
+    border: 1px solid rgba(0,0,0,0.1);
+    padding: 7px !important;
+    background: #fff;
+}
+
+.megamenu-slideshow-container .slideshow img {
+    max-width: 100%;
+    width: auto;
+    border: 1px solid #dfdfdf;
+    max-height: 100%;
+    height: auto;
+}
+
+.megamenu-slideshow-container li {
+    border: none !important;
+}
+
+.megamenu-slideshow-container li .name,
+.megamenu-slideshow-container li .price-box {
+    text-align: center;
+    line-height: 1.5em;
+    margin: 0;
+}
+
+.megamenu-slideshow-container li .name {
+    text-transform: uppercase;
+}
+
+.megamenu-slideshow-container li .price-box .price  {
+    color: red;
+    font-weight: bold;
+}
+
+#megamenu-navigation:not(.mobile-mode) .megamenu-container .links-container > ul {padding: 0 10px;}
+.megamenu-container .links-container ul {
+    display: block;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+#megamenu-navigation .megamenu-gallery-container .gallery-item {
+    border-bottom: none;
+    text-align: center;
+    min-height: 290px;
+    border: 3px solid transparent;
+}
+
+#megamenu-navigation .megamenu-gallery-container .gallery-item.menu-active {
+    background-color: #fff;
+    -moz-transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+    border: 3px solid #dfdfdf;
+}
+
+#megamenu-navigation .megamenu-gallery-container .gallery-item span {
+    display: block;
+}
+
+#megamenu-navigation .megamenu-gallery-container .gallery-item img {
+    margin: 0 auto;
+}
+
+/* 
+    Category Image Styles 
+*/
+
+#megamenu-navigation .item-thumbnail {
+    max-width: 30px; 
+    width: 100%; 
+    display: block; 
+    float: left; 
+    margin-right: 10px;
+    max-height: 30px;
+}
+#megamenu-navigation .item-thumbnail img {
+    max-width: 100%; 
+    max-height: 100%; 
+    width: auto;
+    height: auto;
+}
+
+a.view-all {
+    font-weight: bold; 
+    color: #000;
+}
+
+/*nav .menu-container li {border-bottom: 1px dashed rgba(0,0,0,.15); padding: 7px 10px;}*/
+#megamenu-navigation .megamenu-panels .links-container li:last-child,
+#megamenu-navigation .menu-panels .menu-container li:last-child {
+    border: none;
+} 
+.menu-container li {
+    display: block;
+}
+
+#megamenu-navigation .megamenu-container.active {
+    box-sizing: border-box;
+    box-shadow:  1px 1px 1px 0 rgba(0,0,0,.3); 
+    border: 1px solid rgba(0,0,0,.15); 
+    padding: 20px;
+    position: absolute;
+    z-index: 99999999;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 1px;
+}
+#megamenu-navigation .megamenu-container.active.extra-p {
+    padding-bottom: 60px;
+}
+
+#megamenu-navigation a.item {
+    display: block;
+}
+
+#megamenu-navigation #nav-container > ul > li {
+    display: block; 
+    width: auto; 
+    margin: 0 10px; 
+    padding: 5px 10px; 
+    float: left;
+}
+
+#megamenu-navigation.mobile-mode  #nav-container > ul > li {
+    float: none;
+}
+
+#megamenu-navigation li.parent-menu {position: relative;}
+#megamenu-navigation li.parent.active > .menu-container {
+    position: absolute; 
+    visibility: visible; 
+    top: 0; 
+    z-index: 999999;
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); 
+    box-shadow: 0px 0px 1px 1px #999;}
+#megamenu-navigation .mega-menu-container {
+    color: #666;
+}
+#megamenu-navigation .menu-container {
+    /*min-width: 240px;*/
+}
+#megamenu-navigation .menu-container li {
+    padding: 0;
+}
+#megamenu-navigation li {
+    border-bottom: 1px dashed rgba(0,0,0,.15);
+}
+#megamenu-navigation li:last-child {
+    border-bottom: 0;
+}
+#megamenu-navigation li a {
+    padding: 7px 10px;
+    box-sizing: border-box;
+}
+
+#megamenu-navigation li a .category-name {
+    padding-right: 5px;
+}
+
+#megamenu-navigation #nav-container > ul > li,
+#megamenu-navigation .slideshow-container ul > li {
+    border-bottom: 0;
+}
+
+#megamenu-navigation #nav-container > ul > li {
+    padding: 0;
+    margin: 0;
+    border-right: 1px solid #fff;
+}
+
+#megamenu-navigation.mobile-mode #nav-container > ul > li {
+    border-right: none;
+}
+
+
+#megamenu-navigation #nav-container > ul > li > a {
+    padding: 10px 15px;
+    margin: 0 10px;
+}
+
+#megamenu-navigation #nav-container > ul > li:hover > a {
+    text-shadow: 1px 1px 1px 1px #000;
+}
+
+#megamenu-navigation .megamenu-container .back-button {
+    position: absolute; 
+    bottom: 0.5%; left: 1px; 
+    width: calc(100% - 2px); 
+    padding: 4px 10px 4px 20px; 
+    text-align: center;
+    box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.5); 
+    text-transform: uppercase; 
+    color: #000;
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10+,Saf    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+}
+
+#megamenu-navigation .megamenu-container .back-button .arrow {
+    content: '';
+    width: 0;
+    height: 0;
+    display: inline-block;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #666;
+    border-right: none;
+    margin-top: -5px;
+    -webkit-transform: rotate(180deg);
+}
+
+#megamenu-navigation .megamenu-container a.item {
+    color: #000;
+}
+
+#megamenu-navigation .megamenu-container a.item .category-name {
+    /*position: absolute;*/
+}
+
+#megamenu-navigation .megamenu-container a.item:hover .category-name {
+    font-weight: bold;
+}
+
+#nav #megamenu-navigation .links-container li, 
+#nav #megamenu-navigation .menu-container li  {
+    height: 40px;
+}
+
+#megamenu-navigation #nav-container .links-container >  ul > li {
+    display: inline-block;
+    width: auto;
+    margin: 0 10px;
+    padding: 5px 10px;
+    border-bottom: 0;
+}
+
+.megamenu-gallery-wrapper .gallery {
+    overflow: hidden;
+}
+
+.megamenu-gallery-wrapper .gallery li {
+    float: left;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+
+#megamenu-navigation.mobile-mode .breadcrumbs {
+    display: none !important;
+}
+
+#megamenu-navigation.mobile-mode #nav-container {
+    padding: 0 10px;
+    background: #efefef;
+}
+#megamenu-navigation.mobile-mode .megamenu-slideshow-container, 
+#megamenu-navigation.mobile-mode .megamenu-text-widget, 
+#megamenu-navigation.mobile-mode .megamenu-container .back-button,
+#megamenu-navigation.mobile-mode .megamenu-container,
+#megamenu-navigation.mobile-mode .menu-container{
+    display: none;
+}
+
+#megamenu-navigation.mobile-mode .megamenu-container > .links-container {
+    max-width: 100%;
+}
+
+#megamenu-navigation.mobile-mode .current-container {
+    background: #fff !important;
+}
+#megamenu-navigation.mobile-mode #nav-container ul li {
+    max-width: 100%; 
+    width: 100%;
+    margin: 0;
+    position: relative;
+    padding: 0;
+    border-bottom: 0;
+    padding-left: 10px !important;
+}
+
+#megamenu-navigation.mobile-mode #nav-container ul li.parent.active > .container {
+    display: block;
+    position: static;
+    box-shadow: none;
+    background: none;
+    padding: 0 0 0 10px;
+}
+
+#megamenu-navigation.mobile-mode .megamenu-container.active {
+    position: static;
+}
+
+/*#megamenu-navigation.mobile-mode li.parent.active > .menu-container*/
+
+#megamenu-navigation.mobile-mode #nav-container ul li a {
+    padding: 8px 0;
+    border-bottom: 1px dashed rgba(0,0,0,.15);
+}
+
+#megamenu-navigation.mobile-mode li.parent.active > a.item {
+    font-weight: bold;
+    color: 
+}
+
+#megamenu-navigation.mobile-mode #nav-container > ul > li:last-child > a {
+    border: none;
+}
+
+#megamenu-navigation.mobile-mode #nav-container > ul > li:last-child.active > a {
+    border-bottom: 1px dashed rgba(0,0,0,.15);
+}
+
+#megamenu-navigation.mobile-mode #nav-container ul li.parent:after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 23px;
+    right: 12px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 7px 7px 7px;
+    border-color: transparent transparent #6d6d6e transparent;
+}
+
+#megamenu-navigation.mobile-mode #nav-container ul li.parent.active:after {
+    -webkit-transform: rotate(180deg);
+}
+
+#megamenu-navigation.mobile-mode .megamenu-container.active .links-container,
+#megamenu-navigation.mobile-mode .megamenu-container.active .links-container ul {
+    max-width: 100%;
+    width: 100%;
+}
+
+#megamenu-navigation.mobile-mode .menu-container {
+    max-width: 100%;
+    width: 100%;
+}
+
+#megamenu-navigation.mobile-mode li.parent-menu.active > .menu-container {
+    position: static;
+    box-shadow: none;
+    background: none;
+}
+
+#megamenu-navigation.mobile-mode .megamenu-container.active, 
+#megamenu-navigation.mobile-mode .megamenu-container.active .links-container ul {
+    padding: 0; 
+    background: none; 
+    box-shadow: none;
+    border: none;
+}
+
+.nav-primary #megamenu-navigation.mobile-mode li.parent > a:after {
+    display: none;
+}

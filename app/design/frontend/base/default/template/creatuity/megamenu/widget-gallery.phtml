@@ -1,0 +1,39 @@
+<?php /* @var $this Creatuity_MegaMenu_Block_Widgets_Slider */ ?>
+
+<div class="megamenu-widget megamenu-gallery-wrapper">
+    <?php if (!$this->getIsValid()): ?>
+        <span class="invalid-state-message error-msg"><?php echo $this->getInvalidStateMessage(); ?></span>
+    <?php else: ?>
+        
+        <?php if($this->hasImagesData()): ?>
+        <div class="megamenu-gallery-container">
+            
+            <ul class="gallery">
+                <?php foreach($this->getImagesData() as $data): ?>
+                <li class="gallery-item item-type-<?php echo $data['item_type']; ?> ">
+                    <?php if ($this->getIsLinkingEnabled()): ?>
+                        <a href="<?php echo $data['href']; ?>"> 
+                    <?php endif; ?>
+                            
+                            <span><img src="<?php echo $data['src']; ?>" alt="<?php echo $data['src']; ?>" width="<?php echo $this->getImageWidth(); ?>px" height="<?php echo $this->getImageHeight(); ?>px" /></span>
+                            
+                    <?php if ($this->getIsLinkingEnabled()): ?>
+                        </a>
+                    <?php endif; ?>
+                    
+                    <?php if ($this->getIsShowingProductNames() && !empty($data['name'])):?>
+                        <p class="name"><?php echo $data['name']; ?></p>
+                    <?php endif; ?>
+                        
+                    <?php if ($this->getIsShowingProductPrices() && !empty($data['price'])):?>
+                        <p class="price"><?php echo $data['price']; ?></p>                    
+                    <?php endif; ?>
+                    
+                </li>
+                <?php endforeach; ?>
+            </ul>
+            
+        </div>
+        <?php endif; ?>
+    <?php endif; ?>
+</div>

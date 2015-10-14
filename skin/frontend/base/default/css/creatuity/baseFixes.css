@@ -1,0 +1,73 @@
+#nav #megamenu-navigation,
+#nav #megamenu-navigation ul,
+#nav #megamenu-navigation div {
+    border: none;
+    left: 0px;
+/*    position: absolute;*/
+    top: 0px;
+    width: 100%;
+}
+
+#nav #megamenu-navigation .megamenu-panels {
+    top: 52px;
+    overflow: visible;
+}
+
+#nav #megamenu-navigation .megamenu-panels div,
+#nav #megamenu-navigation .megamenu-panels ul {
+    position: relative;
+}
+
+#nav #megamenu-navigation .megamenu-panels .menu-container {
+    position: absolute;
+}
+    
+#nav {
+    position: relative;
+}
+
+#nav,
+#nav ul li {
+    height: 50px;
+}
+
+#nav ul.slideshow li {
+    height: auto;
+}
+
+#nav .links-container ul li,
+#nav .links-container ul li a, 
+#nav .links-container ul li a:hover{
+    background: none;
+}
+
+#nav #megamenu-navigation ul li.parent a {
+    background: none;
+}
+
+#nav #megamenu-navigation ul li a {
+    line-height: 30px;
+}
+
+#nav #megamenu-navigation ul span,
+#nav #megamenu-navigation ul li.last li span {
+    padding: 0 5px 0 0;
+}
+
+#nav #megamenu-navigation ul span {
+    display: inline;
+}
+
+#nav #megamenu-navigation .menu-container ul a,
+#nav #megamenu-navigation .menu-container ul a:hover {
+    padding: 7px 10px;
+}
+
+#nav #megamenu-navigation ul li,
+#nav #megamenu-navigation ul li.active {
+    background-image: none;
+}
+
+#nav ul li a:hover {
+    padding: 7px 10px;
+}

@@ -1,0 +1,11 @@
+<config>
+  <modules>
+    <Creatuity_MegaMenu>
+      <active>true</active>
+      <codePool>community</codePool>
+      <depends>
+          <Mage_Catalog />
+      </depends>
+    </Creatuity_MegaMenu>
+  </modules>
+</config>

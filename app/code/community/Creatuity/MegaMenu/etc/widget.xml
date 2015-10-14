@@ -1,0 +1,656 @@
+<?xml version="1.0"?>
+<widgets>
+    <megamenu_links_widget type="creatuity_megamenu/widgets_links">
+        <name>Megamenu Links</name>
+        <description type="desc">Adds Mega-Menu Subcategories Links</description>
+        <parameters>
+            <scope_type translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <value>numeric</value>
+                <label>Parameters Type</label>
+                <type>select</type>
+                <values>
+                    <numeric translate="label">
+                        <value>numeric</value>
+                        <label>Numeric</label>
+                    </numeric>
+                    <percent translate="label">
+                        <value>percent</value>
+                        <label>Percentage</label>
+                    </percent>
+                </values>
+            </scope_type>
+            
+            <from_numeric translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <value>1</value>
+                <label>From</label>
+                <description>'1' means first subcategory. '2' means second category. And so on.</description>
+                <validate>required-entry validate-number validate-greater-than-zero</validate>
+                <type>text</type>
+                <depends>
+                    <scope_type>
+                        <value>numeric</value>
+                    </scope_type>
+                </depends>
+            </from_numeric>
+            
+            <to_numeric translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <value>-1</value>
+                <label>To</label>
+                <description>'1' means first subcategory. '2' means second category. And so on. '-1' means last category.  ('To' must be less than 'from') </description>
+                <validate>required-entry validate-number</validate>
+                <type>text</type>
+                <depends>
+                    <scope_type>
+                        <value>numeric</value>
+                    </scope_type>
+                </depends>
+            </to_numeric>
+            
+            <from_percent translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <value>0</value>
+                <label>From</label>
+                <description>'0' means first subcategory. '50' means middle category. '100' means last category.</description>
+                <validate>required-entry validate-number validate-greater-than-zero</validate>
+                <type>text</type>
+                <depends>
+                    <scope_type>
+                        <value>percent</value>
+                    </scope_type>
+                </depends>
+            </from_percent>
+            
+            <to_percent translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <value>100</value>
+                <label>To</label>
+                <description>'0' means first subcategory. '50' means middle category. '100' means last category. ('To' must be less than 'from') </description>
+                <validate>required-entry validate-number validate-percents</validate>
+                <type>text</type>
+                <depends>
+                    <scope_type>
+                        <value>percent</value>
+                    </scope_type>
+                </depends>
+            </to_percent>
+            
+            
+        </parameters>
+    </megamenu_links_widget>
+    
+    <megamenu_slider_widget type="creatuity_megamenu/widgets_slider">
+        <name>Megamenu Slider</name>
+        <description type="desc">Adds Mega-Menu Subcategories Slider</description>
+        <parameters>
+            <scope_type translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <value>numeric</value>
+                <label>Parameters Type</label>
+                <type>select</type>
+                <values>
+                    <numeric translate="label">
+                        <value>numeric</value>
+                        <label>Numeric</label>
+                    </numeric>
+                    <percent translate="label">
+                        <value>percent</value>
+                        <label>Percentage</label>
+                    </percent>
+                </values>
+            </scope_type>
+            
+            <from_numeric translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <value>1</value>
+                <label>From</label>
+                <description>'1' means first subcategory. '2' means second category. And so on.</description>
+                <validate>required-entry validate-number validate-greater-than-zero</validate>
+                <type>text</type>
+                <depends>
+                    <scope_type>
+                        <value>numeric</value>
+                    </scope_type>
+                </depends>
+            </from_numeric>
+            
+            <to_numeric translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <value>-1</value>
+                <label>To</label>
+                <description>'1' means first subcategory. '2' means second category. And so on. '-1' means last category.  ('To' must be less than 'from') </description>
+                <validate>required-entry validate-number</validate>
+                <type>text</type>
+                <depends>
+                    <scope_type>
+                        <value>numeric</value>
+                    </scope_type>
+                </depends>
+            </to_numeric>
+            
+            <from_percent translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <value>0</value>
+                <label>From</label>
+                <description>'0' means first subcategory. '50' means middle category. '100' means last category.</description>
+                <validate>required-entry validate-number validate-greater-than-zero</validate>
+                <type>text</type>
+                <depends>
+                    <scope_type>
+                        <value>percent</value>
+                    </scope_type>
+                </depends>
+            </from_percent>
+            
+            <to_percent translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <value>100</value>
+                <label>To</label>
+                <description>'0' means first subcategory. '50' means middle category. '100' means last category. ('To' must be less than 'from') </description>
+                <validate>required-entry validate-number validate-percents</validate>
+                <type>text</type>
+                <depends>
+                    <scope_type>
+                        <value>percent</value>
+                    </scope_type>
+                </depends>
+            </to_percent>
+            
+            
+            <is_including_categories_images translate="label">
+                <label>Including Categories Images</label>
+                <value>no</value>
+                <required>1</required>
+                <visible>1</visible>
+                <type>select</type>
+                <values>
+                    <no translate="label">
+                        <value>no</value>
+                        <label>No</label>
+                    </no>
+                    <yes translate="label">
+                        <value>yes</value>
+                        <label>Yes</label>
+                    </yes>
+                </values>
+            </is_including_categories_images>
+            
+            <is_including_categories_products_images translate="label">
+                <label>Including Categories Products Images</label>
+                <value>yes</value>
+                <required>1</required>
+                <visible>1</visible>
+                <type>select</type>
+                <values>
+                    <no translate="label">
+                        <value>no</value>
+                        <label>No</label>
+                    </no>
+                    <yes translate="label">
+                        <value>yes</value>
+                        <label>Yes</label>
+                    </yes>
+                </values>
+            </is_including_categories_products_images>
+            
+            <is_linking_enabled translate="label">
+                <label>Links</label>
+                <value>yes</value>
+                <required>1</required>
+                <visible>1</visible>
+                <type>select</type>
+                <values>
+                    <no translate="label">
+                        <value>no</value>
+                        <label>No</label>
+                    </no>
+                    <yes translate="label">
+                        <value>yes</value>
+                        <label>Yes</label>
+                    </yes>
+                </values>
+            </is_linking_enabled>
+            
+            <is_showing_product_names translate="label">
+                <label>Show Product Names</label>
+                <value>yes</value>
+                <required>1</required>
+                <visible>1</visible>
+                <type>select</type>
+                <values>
+                    <no translate="label">
+                        <value>no</value>
+                        <label>No</label>
+                    </no>
+                    <yes translate="label">
+                        <value>yes</value>
+                        <label>Yes</label>
+                    </yes>
+                </values>
+            </is_showing_product_names>
+
+            <is_showing_product_prices>
+                <label>Show Product Prices</label>
+                <value>yes</value>
+                <required>1</required>
+                <visible>1</visible>
+                <type>select</type>
+                <values>
+                    <no translate="label">
+                        <value>no</value>
+                        <label>No</label>
+                    </no>
+                    <yes translate="label">
+                        <value>yes</value>
+                        <label>Yes</label>
+                    </yes>
+                </values>
+            </is_showing_product_prices>
+            
+            <max_items_count>
+                <label>Max Items Count</label>
+                <value>20</value>
+                <required>1</required>
+                <visible>1</visible>
+                <type>text</type>
+            </max_items_count>
+            
+            <image_width>
+                <label>Image Width</label>
+                <value>135</value>
+                <required>1</required>
+                <visible>1</visible>
+                <type>text</type>
+            </image_width>
+
+            <image_height>
+                <label>Image Height</label>
+                <value>135</value>
+                <required>1</required>
+                <visible>1</visible>
+                <type>text</type>
+            </image_height>
+            
+            <is_using_advanced_parameters>
+                <label>Use Advanced Configuration</label>
+                <value>no</value>
+                <required>1</required>
+                <visible>1</visible>
+                <type>select</type>
+                <values>
+                    <no translate="label">
+                        <value>no</value>
+                        <label>No</label>
+                    </no>
+                    <yes translate="label">
+                        <value>yes</value>
+                        <label>Yes</label>
+                    </yes>
+                </values>
+            </is_using_advanced_parameters>
+            
+
+            <category_id>
+                <label>Category Id</label>
+                <value>0</value>
+                <required>1</required>
+                <visible>1</visible>
+                <type>text</type>
+                <depends>
+                    <is_using_advanced_parameters>
+                        <value>yes</value>
+                    </is_using_advanced_parameters>
+                </depends>
+            </category_id>
+            
+            <product_image_field>
+                <label>Product Image Field</label>
+                <value>image</value>
+                <required>1</required>
+                <visible>1</visible>
+                <type>text</type>
+                <depends>
+                    <is_using_advanced_parameters>
+                        <value>yes</value>
+                    </is_using_advanced_parameters>
+                </depends>
+            </product_image_field>
+
+            <category_image_field>
+                <label>Category Image Field</label>
+                <value>image</value>
+                <required>1</required>
+                <visible>1</visible>
+                <type>text</type>
+                <depends>
+                    <is_using_advanced_parameters>
+                        <value>yes</value>
+                    </is_using_advanced_parameters>
+                </depends>
+            </category_image_field>
+
+            <subcategories_level>
+                <label>Subcategories Level</label>
+                <value>1</value>
+                <required>1</required>
+                <visible>1</visible>
+                <type>text</type>
+                <depends>
+                    <is_using_advanced_parameters>
+                        <value>yes</value>
+                    </is_using_advanced_parameters>
+                </depends>
+            </subcategories_level>
+            
+            <products_order_random_seed>
+                <label>Random Seed for Products Order</label>
+                <value>1234</value>
+                <required>1</required>
+                <visible>1</visible>
+                <type>text</type>
+                <depends>
+                    <is_using_advanced_parameters>
+                        <value>yes</value>
+                    </is_using_advanced_parameters>
+                </depends>
+            </products_order_random_seed>
+
+        </parameters>
+    </megamenu_slider_widget>   
+     
+    <megamenu_gallery_widget type="creatuity_megamenu/widgets_gallery">
+        <name>Megamenu Gallery</name>
+        <description type="desc">Adds Mega-Menu Subcategories Gallery</description>
+        <parameters>
+            <scope_type translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <value>numeric</value>
+                <label>Parameters Type</label>
+                <type>select</type>
+                <values>
+                    <numeric translate="label">
+                        <value>numeric</value>
+                        <label>Numeric</label>
+                    </numeric>
+                    <percent translate="label">
+                        <value>percent</value>
+                        <label>Percentage</label>
+                    </percent>
+                </values>
+            </scope_type>
+            
+            <from_numeric translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <value>1</value>
+                <label>From</label>
+                <description>'1' means first subcategory. '2' means second category. And so on.</description>
+                <validate>required-entry validate-number validate-greater-than-zero</validate>
+                <type>text</type>
+                <depends>
+                    <scope_type>
+                        <value>numeric</value>
+                    </scope_type>
+                </depends>
+            </from_numeric>
+            
+            <to_numeric translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <value>-1</value>
+                <label>To</label>
+                <description>'1' means first subcategory. '2' means second category. And so on. '-1' means last category.  ('To' must be less than 'from') </description>
+                <validate>required-entry validate-number</validate>
+                <type>text</type>
+                <depends>
+                    <scope_type>
+                        <value>numeric</value>
+                    </scope_type>
+                </depends>
+            </to_numeric>
+            
+            <from_percent translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <value>0</value>
+                <label>From</label>
+                <description>'0' means first subcategory. '50' means middle category. '100' means last category.</description>
+                <validate>required-entry validate-number validate-greater-than-zero</validate>
+                <type>text</type>
+                <depends>
+                    <scope_type>
+                        <value>percent</value>
+                    </scope_type>
+                </depends>
+            </from_percent>
+            
+            <to_percent translate="label">
+                <required>1</required>
+                <visible>1</visible>
+                <value>100</value>
+                <label>To</label>
+                <description>'0' means first subcategory. '50' means middle category. '100' means last category. ('To' must be less than 'from') </description>
+                <validate>required-entry validate-number validate-percents</validate>
+                <type>text</type>
+                <depends>
+                    <scope_type>
+                        <value>percent</value>
+                    </scope_type>
+                </depends>
+            </to_percent>
+            
+            
+            <is_including_categories_images translate="label">
+                <label>Including Categories Images</label>
+                <value>no</value>
+                <required>1</required>
+                <visible>1</visible>
+                <type>select</type>
+                <values>
+                    <no translate="label">
+                        <value>no</value>
+                        <label>No</label>
+                    </no>
+                    <yes translate="label">
+                        <value>yes</value>
+                        <label>Yes</label>
+                    </yes>
+                </values>
+            </is_including_categories_images>
+            
+            <is_including_categories_products_images translate="label">
+                <label>Including Categories Products Images</label>
+                <value>yes</value>
+                <required>1</required>
+                <visible>1</visible>
+                <type>select</type>
+                <values>
+                    <no translate="label">
+                        <value>no</value>
+                        <label>No</label>
+                    </no>
+                    <yes translate="label">
+                        <value>yes</value>
+                        <label>Yes</label>
+                    </yes>
+                </values>
+            </is_including_categories_products_images>
+            
+            <is_linking_enabled translate="label">
+                <label>Links</label>
+                <value>yes</value>
+                <required>1</required>
+                <visible>1</visible>
+                <type>select</type>
+                <values>
+                    <no translate="label">
+                        <value>no</value>
+                        <label>No</label>
+                    </no>
+                    <yes translate="label">
+                        <value>yes</value>
+                        <label>Yes</label>
+                    </yes>
+                </values>
+            </is_linking_enabled>
+            
+            <is_showing_product_names translate="label">
+                <label>Show Product Names</label>
+                <value>yes</value>
+                <required>1</required>
+                <visible>1</visible>
+                <type>select</type>
+                <values>
+                    <no translate="label">
+                        <value>no</value>
+                        <label>No</label>
+                    </no>
+                    <yes translate="label">
+                        <value>yes</value>
+                        <label>Yes</label>
+                    </yes>
+                </values>
+            </is_showing_product_names>
+
+            <is_showing_product_prices>
+                <label>Show Product Prices</label>
+                <value>yes</value>
+                <required>1</required>
+                <visible>1</visible>
+                <type>select</type>
+                <values>
+                    <no translate="label">
+                        <value>no</value>
+                        <label>No</label>
+                    </no>
+                    <yes translate="label">
+                        <value>yes</value>
+                        <label>Yes</label>
+                    </yes>
+                </values>
+            </is_showing_product_prices>
+            
+            <max_items_count>
+                <label>Max Items Count</label>
+                <value>20</value>
+                <required>1</required>
+                <visible>1</visible>
+                <type>text</type>
+            </max_items_count>
+            
+            <image_width>
+                <label>Image Width</label>
+                <value>135</value>
+                <required>1</required>
+                <visible>1</visible>
+                <type>text</type>
+            </image_width>
+
+            <image_height>
+                <label>Image Height</label>
+                <value>135</value>
+                <required>1</required>
+                <visible>1</visible>
+                <type>text</type>
+            </image_height>
+            
+            <is_using_advanced_parameters>
+                <label>Use Advanced Configuration</label>
+                <value>no</value>
+                <required>1</required>
+                <visible>1</visible>
+                <type>select</type>
+                <values>
+                    <no translate="label">
+                        <value>no</value>
+                        <label>No</label>
+                    </no>
+                    <yes translate="label">
+                        <value>yes</value>
+                        <label>Yes</label>
+                    </yes>
+                </values>
+            </is_using_advanced_parameters>
+            
+
+            <category_id>
+                <label>Category Id</label>
+                <value>0</value>
+                <required>1</required>
+                <visible>1</visible>
+                <type>text</type>
+                <depends>
+                    <is_using_advanced_parameters>
+                        <value>yes</value>
+                    </is_using_advanced_parameters>
+                </depends>
+            </category_id>
+            
+            <product_image_field>
+                <label>Product Image Field</label>
+                <value>image</value>
+                <required>1</required>
+                <visible>1</visible>
+                <type>text</type>
+                <depends>
+                    <is_using_advanced_parameters>
+                        <value>yes</value>
+                    </is_using_advanced_parameters>
+                </depends>
+            </product_image_field>
+
+            <category_image_field>
+                <label>Category Image Field</label>
+                <value>image</value>
+                <required>1</required>
+                <visible>1</visible>
+                <type>text</type>
+                <depends>
+                    <is_using_advanced_parameters>
+                        <value>yes</value>
+                    </is_using_advanced_parameters>
+                </depends>
+            </category_image_field>
+
+            <subcategories_level>
+                <label>Subcategories Level</label>
+                <value>1</value>
+                <required>1</required>
+                <visible>1</visible>
+                <type>text</type>
+                <depends>
+                    <is_using_advanced_parameters>
+                        <value>yes</value>
+                    </is_using_advanced_parameters>
+                </depends>
+            </subcategories_level>
+            
+            <products_order_random_seed>
+                <label>Random Seed for Products Order</label>
+                <value>1234</value>
+                <required>1</required>
+                <visible>1</visible>
+                <type>text</type>
+                <depends>
+                    <is_using_advanced_parameters>
+                        <value>yes</value>
+                    </is_using_advanced_parameters>
+                </depends>
+            </products_order_random_seed>
+
+        </parameters>
+    </megamenu_gallery_widget>    
+</widgets>

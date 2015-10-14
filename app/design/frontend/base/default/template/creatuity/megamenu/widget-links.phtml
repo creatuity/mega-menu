@@ -1,0 +1,9 @@
+<?php /* @var $this Creatuity_MegaMenu_Block_Widgets_Links */ ?>
+<div class="links-container megamenu-widget">
+    <?php if (!$this->getIsValid()): ?>
+        <span class="invalid-state-message error-msg"><?php echo $this->getInvalidStateMassage(); ?></span>
+    <?php else: ?>
+        <?php echo $this->getLinksHtml(); ?>
+    <?php endif; ?>
+    
+</div>

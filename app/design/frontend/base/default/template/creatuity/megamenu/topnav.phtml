@@ -1,0 +1,20 @@
+<?php /* @var $this Creatuity_MegaMenu_Block_Category_Renderer_Root */ ?>
+
+<div id="megamenu-navigation">
+    <div class="megamenu-initializer">
+        <?php echo $this->getChildHtml('megamenu.initializer'); ?>
+    </div>
+
+    <div id="nav-container">
+        <?php echo $this->getLinksHtml(); ?>
+    </div>
+
+    <div class="megamenu-panels">
+        <?php echo $this->getMegamenusHtml() ?>
+    </div>
+
+    <div class="menu-panels">
+        <?php echo $this->getMenusHtml() ?>
+    </div>
+    <div class="ajax-loader"></div>
+</div>

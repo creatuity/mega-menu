@@ -1,0 +1,34 @@
+<?php
+/**
+ * @see Creatuity_MegaMenu_Block_Adminhtml_Category_Form_Fieldset_Element
+ */
+?>
+<?php
+    $_element = $this->getElement();
+    $parentValue = $this->getValueOfParentCategory();
+    $this->checkFieldDisable();
+    $elementToggleCode = "toggleValueElements(this, this.parentNode.parentNode); 
+        $({$this->getElementHtmlId()}).setValue('{$parentValue}')"; 
+?>
+<tr>
+    <td class="label"><?php echo trim($this->getElementLabelHtml()) ?></td>
+    <td class="value">
+        <?php echo trim($this->getElementHtml()) ?>
+        <?php if ($_element->getNote()) : ?>
+            <p class="note"><?php echo $_element->getNote() ?></p>
+        <?php endif; ?>
+    </td>
+    <td class="scope-label"><span class="nobr" /></td>
+    
+    <td class="value use-default">
+        <input <?php if($_element->getReadonly()):?> disabled="disabled"<?php endif; ?> type="checkbox" name="use_default[]" id="<?php echo $_element->getHtmlId() ?>_default"<?php if ($this->usedDefault()): ?> checked="checked"<?php endif; ?> onclick="<?php echo $elementToggleCode; ?>" value="<?php echo $this->getAttributeCode() ?>"/>
+        <label for="<?php echo $_element->getHtmlId() ?>_default" class="normal">
+            <?php if ($this->getIsTopCategory()): ?>
+                <?php echo $this->__('Use Default Value') ?>
+            <?php else: ?>
+                <?php echo $this->__('Use Parent Category Value') ?>
+            <?php endif; ?>
+        </label>
+    </td>
+</tr>
+

@@ -1,0 +1,15 @@
+/app/code/community/Creatuity/MegaMenu/
+/app/design/frontend/base/default/layout/creatuity/megamenu.xml
+/app/design/frontend/base/default/template/creatuity/megamenu/
+/app/design/frontend/rwd/default/layout/creatuity/megamenu.xml
+/app/design/adminhtml/default/default/layout/creatuity/megamenu.xml
+/app/design/adminhtml/default/default/template/creatuity/megamenu/
+/skin/frontend/base/default/css/creatuity/megamenu.css
+/skin/frontend/base/default/css/creatuity/baseFixes.css
+/skin/frontend/base/default/js/creatuity/megamenu.js
+/skin/adminhtml/default/default/js/creatuity/megamenu.js
+/app/etc/modules/Creatuity_MegaMenu.xml
+/js/creatuity/lib/jquery-1.10.2.min.js
+/js/creatuity/lib/noconflict.js
+/js/creatuity/lib/modernizr.custom.min.js
+/js/creatuity/lib/jquery.cycle2.min.js

@@ -1,0 +1,14 @@
+nbproject
+.idea
+/media/tmp/*
+/media/catalog/product/cache/*
+/app/code/local/Creatuitycorp/BaseUrl
+/app/code/local/Creatuitycorp/BaseUrl/*
+/app/etc/modules/Creatuitycorp_BaseUrl.xml
+/var/log/*
+/var/session/*
+/var/locks/*
+/var/log/*
+/var/cache/*
+
+/vendor/

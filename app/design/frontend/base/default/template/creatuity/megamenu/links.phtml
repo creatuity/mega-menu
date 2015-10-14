@@ -1,0 +1,40 @@
+<?php /* @var $this Creatuity_MegaMenu_Block_Category_Renderer_Links */ ?>
+
+<ul>
+<?php if($this->getIsViewAll()): ?>
+    <li>
+        <a href="<?php echo $this->getCategoryUrl($this->getCategory()) ?>" class="view-all">
+            <?php if($this->hasThumbnail($this->getCategory())) : ?>    
+                <span class="item-thumbnail"><img <?php echo $this->getCategoryThumbnailImgAttributes($this->getCategory()) ?> /></span>
+            <?php endif; ?>
+                
+            <span class="category-name"><?php echo $this->__('View all') ?> <?php echo $this->getCategoryName($this->getCategory()) ?></span>
+        </a>
+    </li>
+<?php endif; ?>
+    
+<?php foreach((array)$this->getMenuItems() as $item) : ?>
+    <?php /* @var $item Mage_Catalog_Model_Category */ ?>
+    <li <?php echo $this->getCategoryClassAttribute($item) ?>>
+        
+            <a href="<?php echo $this->getCategoryUrl($item) ?>" 
+               class="item" 
+               data-cat-id="<?php echo $this->getIdOfCategory($item) ?>"
+               
+               <?php if($this->haveSubmenu($item)) : ?> 
+               data-child="<?php echo $this->_getCategoryType($item) ?>"
+               <?php endif; ?>
+            > 
+            
+            
+                <?php if($this->hasThumbnail($item)) : ?>    
+                     <span class="item-thumbnail"><img <?php echo $this->getCategoryThumbnailImgAttributes($item); ?> /></span>
+                <?php endif; ?>
+
+                <span class="category-name"><?php echo $this->getCategoryName($item); ?></span>
+        
+            </a>
+    </li>
+<?php endforeach; ?>
+
+</ul>

@@ -1,7 +1,5 @@
 # Mega-Menu Extension
-<p>
 **Version 0.1.1**
-</p>
 
 <h2>TODO :</h2>
 

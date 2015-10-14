@@ -1,11 +1,12 @@
 {
     "name": "creatuity/mega-menu",
-    "description": "MegaMenu module for Magento 1.7+ version",
+    "description": "Mega menu module for Magento 1.7+ version",
     "type": "magento-module",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "require": {
         "magento/magento-composer-installer": "*",
     },
+    
     "authors": [
         {
             "name": "Creatuity Corp",

@@ -1,7 +1,7 @@
 <config>
     <modules>
         <Creatuity_MegaMenu>
-            <version>0.1.6</version>
+            <version>0.1.1</version>
         </Creatuity_MegaMenu>
     </modules>
     <global>
